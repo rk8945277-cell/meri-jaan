@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#17131a">
+<title>For My Favourite Person ♡</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&family=Caveat:wght@500;600;700&display=swap');
+:root{--rose:#d86f98;--rose2:#f2a9c1;--plum:#75445c;--ink:#553848;--muted:#98788a;--paper:#fffafc;--line:#f2d9e3;--shadow:0 22px 70px #9b526d1c}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{margin:0;color:var(--ink);font-family:'DM Sans',sans-serif;background:radial-gradient(ellipse at 8% 8%,#fff 0,transparent 34%),radial-gradient(ellipse at 95% 35%,#f8dce7 0,transparent 30%),linear-gradient(140deg,#fff8fb,#fceaf1 55%,#fff8fb);overflow-x:hidden}
+button,input,textarea{font:inherit}button{cursor:pointer}
+.bg-glow{position:fixed;inset:0;pointer-events:none;z-index:-1;background-image:radial-gradient(#e7a6bd66 1px,transparent 1px);background-size:26px 26px;opacity:.35}
+/* Soft pink ambience and gentle floating decorations */
+body{background-attachment:fixed;background-image:radial-gradient(ellipse at 8% 8%,#fff 0,transparent 34%),radial-gradient(ellipse at 95% 35%,#f8dce7 0,transparent 30%),radial-gradient(ellipse at 48% 100%,#f9dce9 0,transparent 38%),linear-gradient(140deg,#fff8fb,#fceaf1 55%,#fff8fb)}
+.floaties{position:fixed;inset:0;overflow:hidden;pointer-events:none;z-index:1}
+.floaty{position:absolute;bottom:-50px;color:#d985a5;opacity:0;animation:driftUp linear infinite;text-shadow:0 3px 12px #d985a544}
+.floaty:nth-child(1){left:7%;font-size:18px;animation-duration:17s;animation-delay:1s}.floaty:nth-child(2){left:22%;font-size:13px;animation-duration:21s;animation-delay:7s}.floaty:nth-child(3){left:42%;font-size:20px;animation-duration:19s;animation-delay:3s}.floaty:nth-child(4){left:64%;font-size:14px;animation-duration:23s;animation-delay:10s}.floaty:nth-child(5){left:82%;font-size:19px;animation-duration:18s;animation-delay:5s}.floaty:nth-child(6){left:94%;font-size:12px;animation-duration:22s;animation-delay:13s}
+@keyframes driftUp{0%{transform:translateY(0) rotate(0deg);opacity:0}12%{opacity:.48}85%{opacity:.38}100%{transform:translateY(-115vh) rotate(250deg);opacity:0}}
+.nav{position:sticky;top:0;z-index:20;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:13px clamp(16px,5vw,65px);background:#fffaf2d9;backdrop-filter:blur(18px);border-bottom:1px solid #fff}
+.logo{font:700 22px 'Playfair Display',serif;color:var(--plum);white-space:nowrap}.logo span{color:var(--rose)}
+.navlinks{display:flex;gap:18px;align-items:center}.navlinks a{font-size:12px;text-decoration:none;color:#8f6d7e;font-weight:700}.navlinks a:hover{color:var(--rose)}
+.pill{border:1px solid #efcada;background:#fff;color:#a34f74;border-radius:99px;padding:10px 15px;font-weight:700;font-size:12px;box-shadow:0 5px 15px #a9577610}
+.progress{height:3px;background:#f4dce6;position:sticky;top:62px;z-index:19}.progress span{display:block;width:0;height:100%;background:linear-gradient(90deg,#f2a9c1,#b85e83)}
+.wrap{width:min(1120px,92%);margin:auto}.hero{min-height:88vh;display:grid;place-items:center;padding:70px 0 50px;position:relative}
+.hero-card{width:min(900px,100%);position:relative;text-align:center;padding:clamp(35px,7vw,82px) 22px;background:#ffffffb8;border:1px solid #fff;border-radius:38px;box-shadow:var(--shadow);overflow:hidden}
+.hero-card:before,.hero-card:after{content:"";position:absolute;width:240px;height:240px;border:1px solid #f2cad8;border-radius:50%;opacity:.6}.hero-card:before{top:-150px;left:-110px;box-shadow:0 0 0 18px #fceaf2,0 0 0 38px #fff7fa}.hero-card:after{bottom:-170px;right:-90px;box-shadow:0 0 0 18px #fceaf2,0 0 0 38px #fff7fa}
+.kicker{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:#b47c93;font-weight:700}.hero-emoji{font-size:56px;display:block;margin-bottom:16px;animation:float 3s ease-in-out infinite}.script{font:600 clamp(25px,4vw,38px) 'Caveat',cursive;color:#c16c8e}.hero h1{font:600 clamp(48px,8vw,88px)/1.02 'Playfair Display',serif;color:#79445e;margin:13px auto 20px;max-width:760px}.hero p{max-width:610px;margin:0 auto;color:#8d6c7d;line-height:1.9;font-size:15px}.hero-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:30px}
+.btn{border:0;border-radius:99px;padding:14px 23px;color:white;background:linear-gradient(135deg,#e99bb6,#c76188);font-weight:700;box-shadow:0 10px 25px #cb75944a;transition:.2s}.btn:hover{transform:translateY(-3px);box-shadow:0 15px 28px #cb759455}.btn.light{background:#fff;color:#a65377;border:1px solid #f0cbd9;box-shadow:none}
+.scrollhint{margin-top:38px;color:#b38b9c;font-size:11px;letter-spacing:2px;text-transform:uppercase}
+.section{padding:65px 0}.section-head{text-align:center;margin:0 auto 30px;max-width:650px}.section-head .kicker{margin-bottom:12px}.section-head h2{font:600 clamp(34px,5vw,55px)/1.1 'Playfair Display',serif;color:#804961;margin:0 0 12px}.section-head p{color:#967889;line-height:1.8;margin:0}
+.panel{background:#ffffffc7;border:1px solid #fff;border-radius:30px;padding:clamp(22px,4vw,42px);box-shadow:var(--shadow)}
+.count-wrap{display:grid;grid-template-columns:1.1fr 1fr;gap:20px;align-items:center}.count-copy h3{font:600 32px 'Playfair Display',serif;color:#804961;margin:10px 0}.count-copy p{line-height:1.8;color:#967889}.countdown{display:grid;grid-template-columns:repeat(4,1fr);gap:9px}.time{padding:19px 8px;text-align:center;background:linear-gradient(145deg,#fff7fa,#fce8f0);border:1px solid #f3d9e3;border-radius:19px}.time b{display:block;font:600 clamp(25px,4vw,38px) 'Playfair Display',serif;color:#a34f74}.time span{font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:#a78393}
+#wishText{white-space:pre-line}
+.note-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}.note{padding:28px;border-radius:24px;background:linear-gradient(145deg,#fff,#fff5f8);border:1px solid #f4dce5}.note .icon{font-size:30px}.note h3{font:600 25px 'Playfair Display',serif;color:#96536f;margin:12px 0 8px}.note p{color:#8e7180;line-height:1.85;margin:0;white-space:pre-line}
+.gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px;width:100%;visibility:visible}.photo{min-height:250px;position:relative;border:1px dashed #dca5ba;border-radius:22px;background:linear-gradient(145deg,#fff9fb,#f9e5ed);overflow:hidden;display:flex;align-items:center;justify-content:center;flex-direction:column;text-align:center;padding:15px}.photo img{position:absolute;inset:0;display:block;width:100%;height:100%;object-fit:cover;visibility:visible!important;opacity:1!important;z-index:1}.photo .placeholder{font-size:34px}.photo strong{margin-top:10px;color:#9d5b77}.photo small{margin-top:6px;color:#ad8999}.photo input{max-width:100%;margin-top:14px;font-size:11px;z-index:2}.photo .caption{position:absolute;bottom:0;left:0;right:0;background:#4e2e40b8;color:#fff;padding:12px;font-size:12px;z-index:2}.memory-photo{min-height:300px;padding:0;border-style:solid}.memory-photo img{display:block;width:100%;height:300px;object-fit:cover;object-position:center;border-radius:18px;transition:transform .5s ease;background:#f8e5ed}.memory-photo:hover img{transform:scale(1.04)}.memory-photo strong{position:absolute;top:12px;left:12px;right:12px;margin:0;padding:8px 10px;border-radius:14px;background:#2d1b2da8;color:#fff;z-index:2;font-size:14px}.memory-photo .caption{z-index:3;font-size:13px}
+.timeline{display:grid;gap:14px;max-width:800px;margin:auto}.moment{display:grid;grid-template-columns:110px 1fr;gap:16px;align-items:start;padding:20px 22px;background:#fff9fb;border:1px solid #f3dce5;border-radius:20px}.moment .when{font:600 20px 'Caveat',cursive;color:#c16c8e}.moment h3{font:600 22px 'Playfair Display',serif;margin:0 0 5px;color:#89506a}.moment p{margin:0;color:#927587;line-height:1.7}
+.reason-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.reason{min-height:175px;padding:23px;text-align:center;border-radius:22px;background:linear-gradient(145deg,#fff,#fff3f7);border:1px solid #f3dce5;cursor:pointer;transition:.2s}.reason:hover{transform:translateY(-4px);box-shadow:0 12px 30px #a9577618}.reason .emoji{font-size:32px}.reason h3{font:600 21px 'Playfair Display',serif;color:#93516d;margin:10px 0}.reason p{font-size:13px;line-height:1.7;color:#927587;margin:0}
+.letter-wrap{max-width:760px;margin:auto;text-align:center}.envelope{background:linear-gradient(145deg,#f9dce7,#fff5f8);padding:35px 25px;border-radius:28px;border:1px solid #f0cad9}.envelope .big{font-size:48px}.letter{background:#fffdfb;border:1px solid #f0d9df;box-shadow:0 16px 45px #9b526d16;border-radius:12px 28px 28px 28px;padding:clamp(24px,5vw,45px);text-align:left;line-height:2;color:#755366;white-space:pre-line;margin:20px auto 0;max-width:650px}.letter .sign{font:600 27px 'Caveat',cursive;color:#bd6c8d}
+.add-row{display:flex;justify-content:center;margin-top:18px}.music-box{display:flex;align-items:center;justify-content:center;gap:13px;flex-wrap:wrap}.quiz{max-width:600px;margin:auto;text-align:center}.quiz-opts{display:grid;gap:10px;margin:22px auto;max-width:440px}.quiz-opts button{padding:14px;border-radius:15px;background:#fff8fa;border:1px solid #efd0dc;color:#8d526c}.quiz-opts button:hover{background:#fbe8ef}.feedback{min-height:25px;color:#b05f82;font-weight:700}
+.final{position:relative;text-align:center;overflow:hidden;background:linear-gradient(145deg,#fff,#fce8f0);border-radius:34px;padding:clamp(35px,7vw,75px) 20px;border:1px solid white;box-shadow:var(--shadow)}.final h2{font:600 clamp(43px,7vw,72px)/1.08 'Playfair Display',serif;color:#80445f;margin:14px auto}.final p{max-width:620px;margin:0 auto;color:#8d6b7c;line-height:1.9}
+footer{text-align:center;padding:50px 10px 35px;color:#b18b9c;font-size:12px}.footer-heart{font-size:22px;color:#ce7b9b}
+.editor{position:fixed;inset:0;z-index:50;display:none;background:#4b2b3b55;backdrop-filter:blur(5px);justify-content:flex-end}.editor.open{display:flex}.drawer{width:min(470px,100%);height:100%;overflow:auto;background:#fffafd;padding:25px;box-shadow:-15px 0 50px #4b2b3b22}.drawer-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px}.drawer h2{font:600 28px 'Playfair Display',serif;color:#80445f;margin:0}.close{border:0;background:#f9e6ee;color:#96536f;border-radius:50%;width:38px;height:38px;font-size:20px}.field{display:grid;gap:7px;margin:15px 0}.field label{font-size:11px;font-weight:700;color:#a16b83;letter-spacing:1px;text-transform:uppercase}.field input,.field textarea{width:100%;border:1px solid #edd2dd;border-radius:13px;padding:12px;background:#fff;color:#654457;outline-color:#d88ca8}.field textarea{min-height:100px;resize:vertical;line-height:1.6}.drawer-note{font-size:12px;color:#987b8b;line-height:1.7;background:#fff2f7;padding:13px;border-radius:13px}.drawer-actions{display:flex;gap:10px;flex-wrap:wrap;margin:20px 0}
+.toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);z-index:60;background:#75445c;color:white;padding:12px 18px;border-radius:99px;font-size:12px;box-shadow:var(--shadow);opacity:0;transition:.25s;pointer-events:none}.toast.show{opacity:1}
+#confetti{position:fixed;inset:0;z-index:70;pointer-events:none}
+@keyframes float{50%{transform:translateY(-10px) rotate(7deg)}}@media(max-width:760px){.navlinks{display:none}.count-wrap,.note-grid{grid-template-columns:1fr}.gallery{grid-template-columns:1fr 1fr}.reason-grid{grid-template-columns:1fr 1fr}.countdown{gap:6px}.time{padding:14px 5px}.moment{grid-template-columns:75px 1fr}.hero{min-height:78vh;padding-top:45px}}@media(max-width:480px){.gallery,.reason-grid{grid-template-columns:1fr}.photo{min-height:230px}.moment{grid-template-columns:1fr;gap:3px}.section{padding:45px 0}.nav{padding:12px 15px}.logo{font-size:19px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
+
+/* Click-through storybook navigation: one section is shown at a time */
+body.page-mode{min-height:100vh;display:flex;flex-direction:column}
+body.page-mode .page{display:none;min-height:calc(100vh - 112px);align-content:center}
+body.page-mode .page.active{display:block;animation:pageIn .38s ease both}
+body.page-mode .hero.page.active{display:grid}
+body.page-mode main{flex:1;display:block}
+body.page-mode .page-nav{display:flex;justify-content:space-between;align-items:center;gap:12px;max-width:760px;margin:28px auto 0;padding:0 4px}
+body.page-mode .page-nav .page-count{font-size:11px;letter-spacing:1.5px;color:#b18498;font-weight:700}
+body.page-mode footer{display:none}
+body.page-mode footer.show-footer{display:block}
+body.page-mode .progress span{transition:width .3s ease}
+@keyframes pageIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:760px){body.page-mode .page{min-height:calc(100vh - 90px)}}
+
+
+/* Each chapter has its own little reveal — no repeated transition effect */
+.surprise-overlay{position:fixed;inset:0;z-index:90;display:flex;align-items:center;justify-content:center;padding:24px;background:radial-gradient(circle at 50% 42%,#fff9fcf5,#f7dce9f2 72%);backdrop-filter:blur(12px);opacity:0;visibility:hidden;transition:opacity .3s ease,visibility .3s ease;pointer-events:none}
+.surprise-overlay.show{opacity:1;visibility:visible}
+.surprise-card{text-align:center;max-width:420px;transform:translateY(18px) scale(.94);transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+.surprise-overlay.show .surprise-card{transform:translateY(0) scale(1)}
+.surprise-gift{font-size:clamp(70px,13vw,105px);display:block;filter:drop-shadow(0 12px 16px #b85e8330);animation:revealPop .65s cubic-bezier(.2,.8,.2,1) both}
+.surprise-sparkle{font-size:22px;color:#c66d91;letter-spacing:14px;margin:8px 0 14px;animation:twinkle .8s ease-in-out infinite alternate}
+.surprise-title{font:600 clamp(30px,6vw,42px) 'Playfair Display',serif;color:#80445f;margin:0 0 9px}
+.surprise-caption{font:600 23px 'Caveat',cursive;color:#bd6c8d;margin:0}
+@keyframes revealPop{0%{opacity:0;transform:scale(.25) rotate(-25deg)}70%{transform:scale(1.16) rotate(7deg)}100%{opacity:1;transform:scale(1) rotate(0)}}
+@keyframes twinkle{from{opacity:.45;transform:scale(.9)}to{opacity:1;transform:scale(1.12)}}
+/* Countdown: calendar flip */
+.surprise-overlay.fx-birthday{background:radial-gradient(circle,#fff 0%,#fce5ec 68%,#f5c7d9 100%)}.fx-birthday .surprise-gift{animation:calendarFlip .8s ease both}.fx-birthday .surprise-sparkle{color:#d17b9b}
+@keyframes calendarFlip{0%{transform:perspective(400px) rotateY(90deg);opacity:0}100%{transform:perspective(400px) rotateY(0);opacity:1}}
+/* Birthday wish: flower bloom */
+.surprise-overlay.fx-wish{background:radial-gradient(circle,#fffdf7,#fce8ee 65%,#f5c6d7)}.fx-wish .surprise-gift{animation:bloom .9s cubic-bezier(.2,.8,.2,1) both}
+@keyframes bloom{0%{transform:scale(.05) rotate(-80deg);opacity:0}65%{transform:scale(1.25) rotate(15deg)}100%{transform:scale(1) rotate(0);opacity:1}}
+/* Memories: polaroid drop */
+.surprise-overlay.fx-memories{background:linear-gradient(135deg,#fff7f0,#f9dce8)}.fx-memories .surprise-gift{animation:photoDrop .8s ease both}
+@keyframes photoDrop{0%{transform:translateY(-100px) rotate(-25deg);opacity:0}70%{transform:translateY(10px) rotate(8deg)}100%{transform:translateY(0) rotate(-3deg);opacity:1}}
+/* Our story: page turn */
+.surprise-overlay.fx-story{background:linear-gradient(120deg,#fdf4ff,#f7ddec)}.fx-story .surprise-gift{animation:pageTurn .8s ease both}
+@keyframes pageTurn{0%{transform:perspective(500px) rotateY(-100deg);opacity:0}100%{transform:perspective(500px) rotateY(0);opacity:1}}
+/* Reasons: heart beat */
+.surprise-overlay.fx-reasons{background:radial-gradient(circle,#fff5fa,#f8d4e4)}.fx-reasons .surprise-gift{animation:heartBeat .9s ease both}
+@keyframes heartBeat{0%,100%{transform:scale(1)}15%,45%{transform:scale(1.25)}30%,60%{transform:scale(1.05)}75%{transform:scale(1.16)}}
+/* Letter: envelope rise */
+.surprise-overlay.fx-letter{background:linear-gradient(145deg,#fff9f0,#f6dce8)}.fx-letter .surprise-gift{animation:letterRise .85s ease both}
+@keyframes letterRise{0%{transform:translateY(65px) scale(.7);opacity:0}65%{transform:translateY(-8px) scale(1.08)}100%{transform:translateY(0) scale(1);opacity:1}}
+/* Music: floating notes */
+.surprise-overlay.fx-music{background:radial-gradient(circle at 50% 30%,#fff,#f3dff4 72%)}.fx-music .surprise-gift{animation:musicFloat .9s ease-in-out infinite alternate}
+@keyframes musicFloat{from{transform:translateY(9px) rotate(-9deg)}to{transform:translateY(-13px) rotate(9deg)}}
+/* Game: playful spin */
+.surprise-overlay.fx-game{background:linear-gradient(135deg,#fff8ed,#f8d7e6)}.fx-game .surprise-gift{animation:gameSpin .85s cubic-bezier(.2,.8,.2,1) both}
+@keyframes gameSpin{0%{transform:rotate(-180deg) scale(.2);opacity:0}75%{transform:rotate(20deg) scale(1.15)}100%{transform:rotate(0) scale(1);opacity:1}}
+/* Final: celebratory burst */
+.surprise-overlay.fx-final{background:radial-gradient(circle,#fff 0%,#ffe6ef 48%,#f2bcd2 100%)}.fx-final .surprise-gift{animation:finalBurst 1s cubic-bezier(.15,.8,.2,1) both}.fx-final .surprise-sparkle{font-size:28px;letter-spacing:18px}
+@keyframes finalBurst{0%{transform:scale(0);filter:blur(8px);opacity:0}60%{transform:scale(1.35);filter:blur(0);opacity:1}100%{transform:scale(1);opacity:1}}
+@media(prefers-reduced-motion:reduce){.surprise-gift,.surprise-sparkle{animation:none!important}}
+
+
+/* DARK PINK THEME — preserves each page's individual surprise animation */
+:root{--rose:#f08bb5;--rose2:#b85d89;--plum:#f2a8c6;--ink:#f6eaf0;--muted:#c5a9b8;--paper:#17131a;--line:#493140;--shadow:0 22px 70px #0008}
+html{color-scheme:dark}
+body{color:var(--ink);background:radial-gradient(ellipse at 8% 8%,#34202f 0,transparent 34%),radial-gradient(ellipse at 95% 35%,#2d1a2a 0,transparent 30%),linear-gradient(140deg,#100e14,#1b121c 55%,#100e14)}
+.nav{background:#151019e8;border-bottom:1px solid #493140;color:#f6eaf0}
+.pill{border-color:#684057;background:#241925;color:#f2a8c6;box-shadow:0 5px 15px #0004}
+.progress{background:#392432}.progress span{background:linear-gradient(90deg,#f4a3c4,#a94d7a)}
+.hero-card{background:linear-gradient(145deg,#241a27ed,#19141fef);border-color:#56364a;box-shadow:0 22px 70px #0009}
+.hero-card:before,.hero-card:after{border-color:#71415d}.hero-card:before{box-shadow:0 0 0 18px #2a1b29,0 0 0 38px #211723}.hero-card:after{box-shadow:0 0 0 18px #2a1b29,0 0 0 38px #211723}
+.btn{color:#180f17;background:linear-gradient(135deg,#f5a6c5,#c76896);box-shadow:0 10px 25px #b85d8940}.btn.light{background:#2b1e2b;color:#f2a8c6;border:1px solid #654057}
+.panel{background:#201923eF;border-color:#493140;box-shadow:var(--shadow)}
+.count-copy h3{color:#f2a8c6}.count-copy p{color:#c5a9b8}
+.time{background:linear-gradient(145deg,#302131,#211824);border-color:#58384b}.time b{color:#f2a8c6}.time span{color:#c5a9b8}
+.note{background:linear-gradient(145deg,#2b202d,#211923);border-color:#513448}.note h3{color:#f0a0bf}.note p{color:#c8afbc}
+.photo{background:linear-gradient(145deg,#2b202d,#211923);border-color:#a96a8a}.photo strong{color:#f2a8c6}.photo small{color:#c5a9b8}
+.moment{background:#281e2a;border-color:#503347}.moment .when{color:#f2a8c6}.moment h3{color:#f0a0bf}.moment p{color:#c8afbc}
+.reason{background:linear-gradient(145deg,#302131,#211824);border-color:#513448}.reason h3{color:#f2a8c6}.reason p{color:#c8afbc}
+.envelope{background:linear-gradient(145deg,#3b2638,#251a29);border-color:#654057}.letter{background:#211a25;border-color:#56384a;color:#ead9e2;box-shadow:0 16px 45px #0006}.letter .sign{color:#f2a8c6}
+.quiz-opts button{background:#2b202d;border-color:#604057;color:#f2c2d6}.quiz-opts button:hover{background:#42283a}.feedback{color:#f2a8c6}
+.final{background:linear-gradient(145deg,#302131,#211824);border-color:#644057}.final h2{color:#f2a8c6}.final p{color:#c8afbc}
+.editor{background:#09070bbd}.drawer{background:#1b151f;color:#f6eaf0;box-shadow:-15px 0 50px #0009}.drawer h2{color:#f2a8c6}.close{background:#382437;color:#f2a8c6}.field label{color:#e49ab8}.field input,.field textarea{border-color:#604057;background:#261d2a;color:#f6eaf0}.drawer-note{color:#d1b9c6;background:#2b202d}
+.toast{background:#e99abb;color:#21121d}
+.surprise-overlay{background:radial-gradient(circle at 50% 42%,#251a2cf5,#100d14f5 72%)}
+.surprise-overlay.fx-birthday{background:radial-gradient(circle,#342033 0%,#241525 68%,#160f1a 100%)}
+.surprise-overlay.fx-wish{background:radial-gradient(circle,#342b2b,#2c1b2b 65%,#170f1b)}
+.surprise-overlay.fx-memories{background:linear-gradient(135deg,#30221f,#2b1b2b)}
+.surprise-overlay.fx-story{background:linear-gradient(120deg,#291d32,#321c30)}
+.surprise-overlay.fx-reasons{background:radial-gradient(circle,#352033,#2b182b)}
+.surprise-overlay.fx-letter{background:linear-gradient(145deg,#30251f,#2b1a2a)}
+.surprise-overlay.fx-music{background:radial-gradient(circle at 50% 30%,#34243a,#1b1423 72%)}
+.surprise-overlay.fx-game{background:linear-gradient(135deg,#30261f,#2d1b2b)}
+.surprise-overlay.fx-final{background:radial-gradient(circle,#3b2637 0%,#2b192b 48%,#160e19 100%)}
+/* Per-page original soundtrack controls */
+input,textarea,select{accent-color:#e98fb2}
+::selection{background:#a94d7a;color:#fff}
+@media(prefers-reduced-motion:no-preference){.panel,.note,.reason,.photo,.moment{transition:background .25s,border-color .25s}}
+
+
+/* Different mini-game for every page unlock */
+.petal-game-overlay{position:fixed;inset:0;z-index:1000;display:none;place-items:center;padding:18px;background:#100b16eF;backdrop-filter:blur(12px)}
+.petal-game-overlay.open{display:grid}
+.petal-game-card{width:min(540px,100%);max-height:92vh;overflow:auto;padding:25px;border-radius:26px;text-align:center;background:linear-gradient(145deg,#211827,#302033);border:1px solid #9e6487;color:#fff2f8;box-shadow:0 25px 90px #0009}
+.petal-game-card h2{font:600 clamp(26px,5vw,36px) 'Playfair Display',serif;margin:8px 0;color:#ffd7e8}
+.petal-game-card p{color:#e1bfd0;line-height:1.6;margin:8px 0 14px}
+.petal-game-stats{display:flex;justify-content:space-between;gap:12px;font-weight:700;color:#f4a9c9;margin:12px 2px}
+.petal-playfield{min-height:180px;position:relative;overflow:hidden;border-radius:20px;border:1px solid #88516f;background:radial-gradient(circle at 50% 40%,#493047,#251b2b 75%);padding:16px;display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:10px}
+.petal-target,.mini-choice,.memory-card,.sequence-key{border:1px solid #bd7c9d;border-radius:15px;background:#493047;color:#fff2f8;padding:13px 17px;font-size:22px;cursor:pointer;min-width:58px;box-shadow:0 6px 18px #0003;touch-action:manipulation}
+.petal-target{position:absolute;font-size:32px;padding:8px 12px;border-radius:50%;background:#613b55}
+.mini-choice:hover,.memory-card:hover,.sequence-key:hover{background:#70435f}
+.mini-choice:disabled,.memory-card:disabled,.sequence-key:disabled{opacity:.55;cursor:default}
+.memory-card{width:76px;height:76px;font-size:27px}
+.petal-game-message{min-height:26px;font-weight:700;color:#ffc2dc;margin:10px 0}
+.petal-game-actions{display:flex;justify-content:center;gap:10px;flex-wrap:wrap}
+@media(max-width:480px){.petal-game-card{padding:20px 14px}.petal-playfield{min-height:190px;padding:10px}.memory-card{width:65px;height:65px}}
+
+
+#reminderText{white-space:pre-line}
+.final-surprise-card{max-width:850px;margin:0 auto;padding:clamp(24px,5vw,48px);border:1px solid #f2c5d7;border-radius:28px;background:linear-gradient(145deg,rgba(255,246,250,.96),rgba(255,232,242,.94));box-shadow:0 18px 55px rgba(125,55,87,.13);text-align:center}
+.final-surprise-card .hero-emoji{font-size:clamp(42px,7vw,66px);margin-bottom:10px;animation:finalFloat 3s ease-in-out infinite}
+.final-opening{font-size:1.06rem;line-height:1.9;max-width:720px;margin:18px auto 22px}
+.promise-box{max-width:720px;margin:22px auto;padding:22px 24px;border-radius:20px;background:rgba(255,255,255,.78);border:1px solid #f1c5d6;text-align:left;line-height:1.85}
+.promise-heading{font-family:Georgia,serif;font-size:1.35rem;font-weight:700;color:#9b466b;text-align:center;margin-bottom:10px}
+.promise-box p{margin:0}
+.final-birthday-wish{font-family:Georgia,serif;font-weight:700;font-size:clamp(1.35rem,3vw,1.8rem);line-height:1.6;color:#a43e6a;margin:24px auto}
+.final-birthday-wish span{display:inline-block;font-family:inherit;font-size:1rem;font-weight:400;color:#694653;max-width:700px}
+.final-surprise-actions{justify-content:center;gap:12px;flex-wrap:wrap;margin-top:22px}
+.final-reveal{max-width:720px;margin:26px auto 0;padding:24px;border-radius:22px;background:linear-gradient(135deg,#fff,#fff0f6);border:1px solid #efb4cb;animation:revealIn .6s ease both;line-height:1.85}
+.final-reveal h3{font-family:Georgia,serif;color:#a43e6a;font-size:1.35rem;margin:8px 0}
+.reveal-hearts{font-size:1.6rem;letter-spacing:5px}
+.final-signature{font-family:Georgia,serif;font-weight:700;color:#9b466b;margin-top:16px;font-size:1.1rem}
+.floating-love{position:fixed;z-index:9999;pointer-events:none;left:var(--x);bottom:-40px;font-size:var(--size);animation:loveFloat var(--duration) ease-out forwards;filter:drop-shadow(0 3px 5px #d87fa366)}
+@keyframes finalFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+@keyframes revealIn{from{opacity:0;transform:translateY(14px) scale(.98)}to{opacity:1;transform:translateY(0) scale(1)}}
+@keyframes loveFloat{0%{opacity:0;transform:translateY(0) rotate(-12deg)}12%{opacity:1}100%{opacity:0;transform:translateY(-115vh) rotate(25deg)}}
+@media(max-width:600px){.promise-box{padding:18px;text-align:left}.final-surprise-card{padding:22px 16px}.final-opening{font-size:1rem}}
+
+</style>
+</head>
+<body>
+<div class="bg-glow"></div>
+<div class="floaties" aria-hidden="true"><span class="floaty">♡</span><span class="floaty">✦</span><span class="floaty">✿</span><span class="floaty">♡</span><span class="floaty">✧</span><span class="floaty">❀</span></div>
+<header class="nav">
+  <div class="logo">a little world <span>♡</span></div>
+  <nav class="navlinks"><a href="#birthday">THE DAY</a><a href="#memories">MEMORIES</a><a href="#reasons">WHY YOU</a><a href="#letter">A LETTER</a></nav>
+  <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;justify-content:flex-end">
+    <button class="pill" id="soundToggle" type="button" onclick="togglePageSound()" aria-pressed="true">✿ Flower sound: ON</button>
+    <button class="pill" onclick="openEditor()">✎ Personalise this</button>
+  </div>
+</header>
+<div class="progress"><span id="progressBar"></span></div>
+<canvas id="confetti"></canvas>
+<div class="petal-game-overlay" id="petalGameOverlay" role="dialog" aria-modal="true" aria-labelledby="petalGameTitle">
+ <div class="petal-game-card">
+  <div style="font-size:32px">🎮 ✨ 🌸</div>
+  <div class="kicker">one different game for every chapter</div>
+  <h2 id="petalGameTitle">Unlock the next chapter</h2>
+  <p id="petalGameHint">Complete this little challenge to continue ♡</p>
+  <div class="petal-game-stats"><span id="petalScore">Challenge 1</span><span id="petalTimer">Ready?</span></div>
+  <div class="petal-playfield" id="petalPlayfield"></div>
+  <div class="petal-game-message" id="petalGameMessage">Ready when you are!</div>
+  <div class="petal-game-actions"><button class="btn" id="petalStartBtn" type="button" onclick="startUnlockGame()">Start game ♡</button><button class="btn light" type="button" onclick="cancelPetalGame()">Not now</button></div>
+ </div>
+</div>
+<div class="surprise-overlay" id="surpriseOverlay" aria-live="polite" aria-hidden="true"><div class="surprise-card"><span class="surprise-gift">🎁</span><div class="surprise-sparkle">✦ ♡ ✦</div><h2 class="surprise-title" id="surpriseTitle">A little surprise...</h2><p class="surprise-caption" id="surpriseCaption">Something sweet is waiting for you ♡</p></div></div>
+
+<section class="hero wrap page active" id="home">
+<div class="panel" style="margin:18px auto;max-width:680px;padding:18px;text-align:center;"><div style="font-weight:700;margin-bottom:10px;">🎵 Dhol Na Song</div><audio controls preload="none" style="width:100%;" src="media/embedded-audio-01.mp3"></audio></div>
+
+  <div class="hero-card">
+    <span class="hero-emoji">🎀</span><div class="kicker">a little website made just for you</div>
+    <div class="script">To my favourite person...</div>
+    <h1 id="heroTitle">My Pyari Bacchi...</h1>
+    <p id="heroText">Teri muskaan se har din khil jaata hai,
+Tu paas ho ya door, dil ko sukoon de jaata hai. ♡</p>
+    <div class="hero-actions"><a class="btn" href="#birthday" style="text-decoration:none">Come inside ♡</a><button class="btn light" onclick="burst()">A little sparkle ✨</button></div>
+    <div class="scrollhint">scroll slowly · there are surprises below ↓</div>
+  </div>
+</section>
+
+<main class="wrap">
+<section class="section page" id="birthday">
+<div class="panel" style="margin:18px auto;max-width:680px;padding:18px;text-align:center;"><div style="font-weight:700;margin-bottom:10px;">🎵 Page 2 Song</div><audio controls preload="none" style="width:100%;" src="media/embedded-audio-02.mp3"></audio></div>
+
+  <div class="section-head"><div class="kicker">the calendar has a favourite date</div><h2>Counting down to your day</h2><p>One more reason to celebrate the day the world got you.</p></div>
+  <div class="panel count-wrap">
+    <div class="count-copy"><div class="script">Save the date ♡</div><h3>3 November</h3><p id="countText">A day that deserves extra flowers, extra cake, and a little extra love.</p><div class="kicker" id="birthdayStatus">THE COUNTDOWN IS ON</div></div>
+    <div class="countdown"><div class="time"><b id="days">00</b><span>Days</span></div><div class="time"><b id="hours">00</b><span>Hours</span></div><div class="time"><b id="minutes">00</b><span>Minutes</span></div><div class="time"><b id="seconds">00</b><span>Seconds</span></div></div>
+  </div>
+</section>
+
+<section class="section page" id="wish">
+<div class="panel" style="margin:18px auto;max-width:680px;padding:18px;text-align:center;"><div style="font-weight:700;margin-bottom:10px;">🎵 Page 3 Song</div><audio controls preload="none" style="width:100%;" src="media/embedded-audio-03.mp3"></audio></div>
+
+  <div class="section-head"><div class="kicker">a wish from the heart</div><h2>Happy Birthday, <span id="wishName">Sundari</span>! 🌷</h2><p>This is your reminder that you deserve a year full of good things.</p></div>
+  <div class="note-grid">
+    <article class="note"><div class="icon">🌸</div><h3>My wish for you</h3><p id="wishText">Wish you many many happy returns of the day, meri pyari bacchi! 🥰😘🎂 Meri jaan, aaj ka din mere liye bahut hi khaas din hai. 🤗 Aisa lagta hai jaise ye din mere liye kisi festival se kam nahi, kyunki aaj hi ke din meri pyari si bacchi, meri jaan, meri Sundari... 😘🥰🤗 ne is duniya mein kadam rakha aur meri duniya 🌍 sanwaar di. Main bahut lucky person hoon ki Bhagwan ne tumhe mere liye banaya. 🥰😘😙 Iske liye main hamesha Bhagwan ko thank you bolta hoon. 🙇‍♂️ Meri bacchi, main bas yahi chahta hoon ki tum hamesha khush raho. 🥰🤗 Bhagwan tum par hamesha apni kripa banaye rakhe. Meri bacchi ko koi pareshani na ho aur tumhe kisi bhi cheez ki kami na ho. 🥹🫂 Main Bhagwan se bas yahi dua maangta hoon. 🙏 Main apni bacchi ke chehre par kabhi udaasi nahi dekh sakta. 🥹🫂 Main chahta hoon meri jaan hamesha mere saath khush rahe. 🥰 Meri jaan, mujhe tumhara gussa, tumhara pyaar aur tumhari woh daant—sab kuch pasand hai. 😍😘 Jab main koi galat kaam karta hoon aur tum mujhe samjhati ho, daantti ho, toh mujhe woh bhi bahut achha lagta hai. 💗 Meri bacchi, tumhare is birthday par main promise karta hoon ki main tumhe hamesha khush rakhunga aur hamesha tumhare saath rahunga. 🧿❤️ Tum bas aise hi hamesha hansti aur muskurati rehna, kyunki tumhari muskurahat meri duniya ko aur bhi pyaari bana deti hai. 🥰🫂🤗 Happy Birthday, meri bacchi, meri jaan! 🎂😘🥰🤗🌍 Bhagwan tumhari saari wishes poori kare aur tumhe dher saari khushiyan de. 🤞🫂🤗 I love you very, very, very much, meri jaan! 🥰💋😚</p></article>
+    <article class="note"><div class="icon">✨</div><h3>A tiny reminder</h3><p id="reminderText">Remember that you are loved. ♡</article>
+  </div>
+</section>
+
+<section class="section page" id="memories">
+<div class="panel" style="margin:18px auto;max-width:680px;padding:18px;text-align:center;"><div style="font-weight:700;margin-bottom:10px;">🎵 Ishqa Ve</div><audio controls preload="none" style="width:100%;" src="media/embedded-audio-04.mp3"></audio></div>
+
+  <div class="section-head"><div class="kicker">our little collection</div><h2>Memory Lane 📸</h2><p>Meri jaan ki pyaari-pyaari yaadein — bachpan se lekar aaj tak. Har photo mein ek alag kahaani hai. ❤️📸</p></div>
+  <div class="gallery" id="gallery">
+    <div class="photo memory-photo"><img src="media/embedded-image-05.jpg" alt="Our Little Dream" loading="eager"><strong>Our Little Dream</strong><div class="caption">A sweet little picture to begin our memory lane. 💗</div></div>
+    <div class="photo memory-photo"><img src="media/embedded-image-06.jpg" alt="Little Princess" loading="eager"><strong>Little Princess</strong><div class="caption">Tumhari bachpan ki pyaari si yaad. 🌸</div></div>
+    <div class="photo memory-photo"><img src="media/embedded-image-07.jpg" alt="School Days" loading="eager"><strong>School Days</strong><div class="caption">Purani yaadon ki apni hi baat hoti hai. 🫶🏻</div></div>
+    <div class="photo memory-photo"><img src="media/embedded-image-08.jpg" alt="A Beautiful Celebration" loading="eager"><strong>A Beautiful Celebration</strong><div class="caption">Tumhari smile sabse pyaari hai. ❤️</div></div>
+    <div class="photo memory-photo"><img src="media/embedded-image-09.jpg" alt="That Happy Moment" loading="eager"><strong>That Happy Moment</strong><div class="caption">Bas aise hi hamesha muskurati rehna, meri jaan. 🥹</div></div>
+    <div class="photo memory-photo"><img src="media/embedded-image-10.jpg" alt="A Precious Memory" loading="eager"><strong>A Precious Memory</strong><div class="caption">Ek aur yaad jo dil ke kareeb hai. 💖</div></div>
+    <div class="photo memory-photo"><img src="media/embedded-image-11.jpg" alt="Your Lovely Smile" loading="eager"><strong>Your Lovely Smile</strong><div class="caption">Tumhari smile meri favourite hai. 😍</div></div>
+    <div class="photo memory-photo"><img src="media/embedded-image-12.jpg" alt="A Moment to Remember" loading="eager"><strong>A Moment to Remember</strong><div class="caption">Har photo ke saath ek pyaari si yaad. 🌷</div></div>
+    <div class="photo memory-photo"><img src="media/embedded-image-13.jpg" alt="Together in One Frame" loading="eager"><strong>Together in One Frame</strong><div class="caption">Yeh photo memory lane ko aur special banati hai. 💑</div></div>
+    <div class="photo memory-photo"><img src="media/embedded-image-14.jpg" alt="Sweet Memories" loading="eager"><strong>Sweet Memories</strong><div class="caption">Chhoti-chhoti yaadein, bahut saara pyaar. 💞</div></div>
+    <div class="photo memory-photo"><img src="media/embedded-image-15.jpg" alt="My Favourite Person" loading="eager"><strong>My Favourite Person</strong><div class="caption">Meri jaan, tum mere liye bahut special ho. 🧿</div></div>
+    <div class="photo memory-photo"><img src="media/embedded-image-16.jpg" alt="Another Beautiful Memory" loading="eager"><strong>Another Beautiful Memory</strong><div class="caption">Tumhari har muskurahat mere liye khaas hai. 🥰</div></div>
+    <div class="photo memory-photo"><img src="media/embedded-image-17.jpg" alt="Us, in a Picture" loading="eager"><strong>Us, in a Picture</strong><div class="caption">Ek photo, dher saara pyaar. ♾️</div></div>
+  </div>
+  <div class="add-row"><button class="btn light" onclick="addPhoto()">＋ Add another memory</button></div>
+</section>
+
+<section class="section page" id="story">
+<div class="panel" style="margin:18px auto;max-width:680px;padding:18px;text-align:center;"><div style="font-weight:700;margin-bottom:10px;">🎵 Raataan Lambiyan</div><audio controls preload="none" style="width:100%;" src="media/embedded-audio-18.mp3"></audio></div>
+
+  <div class="section-head"><div class="kicker">chapters we keep</div><h2>Our Story, In Little Moments</h2><p>Write your own dates, inside jokes, firsts, and moments you never want to forget.</p></div>
+  <div class="timeline" id="timeline">
+    <article class="moment"><div class="when">Chapter 01</div><div><h3>The beginning</h3><p>Pata hai baby… 🥹❤️ mujhe aaj bhi woh din yaad hai jab hum dono mile the. Meri jaan, main woh din kabhi nahi bhool sakta, kyunki woh meri life ke sabse khoobsूरत aur special moments mein se ek tha. 🌸💖<br><br>Yaad hai, baby, jab tum tilak mein mujhe mala pehnane aayi thi? 🌺🥹 Pehle toh mujhe laga ki shayad woh mala mere liye nahi hai, lekin tum toh mere liye hi laayi thi. ❤️ Tum jab mujhe mala pehnane ki koshish kar rahi thi, toh tumhari height mujh tak pahunch hi nahi rahi thi. Tum panjon par khadi hokar jaise-taise mala pehna rahi thi, aur main tumhara haath pakadkar tumhe dekh raha tha… aur pata nahi main kaise-kaise hans raha tha. 🤭🥰 Us pal se hi, meri jaan, mera dil tumhare liye kuch alag hi mehsoos karne laga tha. 💘🫂<br><br>Phir main ghar chala gaya, aur tum apne bhaiya ki baraat lekar mere ghar aayi. 🥹💗 Us din main itna sharma raha tha ki tumse kuch bol hi nahi paaya. Maine bhi socha tha ki main tumhe mala pehnaunga, lekin aisa ho hi nahi paaya. 🤭❤️<br><br>Uske 4–5 din baad main tumhare ghar aaya tha. Tum mujhe room mein le gayi thi aur nashta karne ke liye poochh rahi thi, lekin main itna sharmila ho gaya tha ki theek se kuch bol bhi nahi paa raha tha. 🥹😅 Aur baby, tum mere liye Frooti bhi laayi thi, brush bhi… tum kitna care kar rahi thi mera. 🥺🫶 Woh chhoti-chhoti baatein aaj bhi mere dil mein bilkul waise hi sambhal kar rakhi hain. 🧃💗<br><br>Meri jaan, woh din mere liye kitne khaas the, jab main tumhe apni aankhon se dekh paata tha. 🥹❤️ Uske baad se lekar aaj tak hum mil bhi nahi paaye, lekin tumhari yaadein mere dil ke bahut kareeb hain. 🌍🫂<br><br>Phir main ghar aa gaya aur bahut mehnat-mashakkat karke tumhari ID dhoondhi. 😅💌 Tumhe message karte waqt mujhe bahut darr lag raha tha, phir bhi maine himmat karke message kar hi diya. Uske baad main tumhare reply ka besabri se intezaar kar raha tha. 🥹📱❤️ Jab tumhara message aaya, baby, main bata nahi sakta ki main kitna khush hua tha! Mere haath-pair pata nahi kyun kaanp rahe the. 🤭💓 Woh meri life ke sabse special dinon mein se ek tha, meri jaan… aur tum us yaad ka sabse pyaara hissa ho. 🫂😘🌷</p></div></article>
+    <article class="moment"><div class="when">Chapter 02</div><div><h3>The Messages That Brought Us Closer 💌</h3><p>Meri jaan ❤️🥹, jab humne pehli baar messages par baat ki thi na, mujhe bahut darr lag raha tha ki kahin kuch galat na ho jaaye, tum kuch galat na bol do… lekin meri bacchi se toh kuch galat ho hi nahi sakta tha. 🫶🏻💗<br><br>Mujhe yaad hai, baby, us waqt mere paas apna phone bhi nahi tha. 📱🥺 Main bas raat hone ka intezaar karta tha ki kab Bade Papa aayenge aur main unse phone lekar tumse baat karunga. Aur kabhi-kabhi toh woh phone hi nahi dete the… us waqt mujhe kitna bura lagta tha, ye main hi jaanta hoon. 😔❤️‍🩹 Bas tumse baat karne ka mann karta tha, meri jaan. ❤️<br><br>Hamare rishte ki shuruaat dosti se hui, phir hum best friends bane. 🫂💕 Tumne beech mein mujhe propose bhi kiya tha, lekin maine tumse kaha ki main 12th ke baad reply dunga. 🙈❤️ Lekin jab maine tumhe apne ek male best friend ke saath birthday par itne paas khade hokar photo khinchwate dekha na, toh mujhe bahut bura laga. Gussa bhi bahut aaya aur tumhe khone ka darr bhi laga. 🥺💗 Tab mujhe ehsaas hua ki meri bacchi mere liye kitni special hai aur main tumhe khona nahi chahta.<br><br>Phir aakhirkaar, maine bhi apni bacchi ko propose kar hi diya. 🥹💍❤️ Aur bas meri jaan, us din se lekar aaj tak, aur aane wale har kal mein bhi, main chahta hoon ki hamara rishta aise hi pyaar, bharose aur khushiyon se bhara rahe. 🫶🏻💖<br><br>Baby, main tumhare baare mein likhne baithun na, toh shayad 4–5 din bhi kam pad jaayenge. 😭❤️ Tum sirf meri girlfriend nahi, meri best friend, meri khushi aur meri zindagi ka sabse pyaara hissa ho. 🥰🧿<br><br><strong>I love you so much, meri jaan! ❤️🫂 We are made for each other, and I want to keep choosing you, today, tomorrow, and forever. 💍♾️💗</strong></p></div></article>
+    <article class="moment"><div class="when">Chapter 03</div><div><h3>Miles Apart, Close at Heart ❤️</h3><p>Meri jaan, baby, tumhe pata hai maine in 4 saalon mein tumhe kitna yaad kiya hai? 🥺❤️ Main shabdon mein bata hi nahi sakta ki main tumhe kitna miss karta hoon. Jab bhi tumhare baare mein sochta hoon na, meri aankhein bhar aati hain. Kabhi-kabhi toh aisa lagta hai ki pata nahi maine aisa kya kiya hai ki mujhe tumse door rehne ke itne mushkil din dekhne pad rahe hain. 😭💔<br><br>Meri bacchi, jab bhi main kisi doosre couple ko saath mein hanste, ghoomte aur ek-doosre ka haath pakadkar chalte dekhta hoon na, toh bas yahi sochta hoon ki meri jaan mere saath kyun nahi hai? 🥹💔 Kaash main bhi tumhara haath pakadkar tumhare saath chal pata, tumhari aankhon mein dekhkar muskura pata aur tumhe apne paas mehsoos kar pata. Pata nahi baby, us waqt kitna rona aata hai. 😭🫂<br><br>Meri jaan, main apni feelings tumhe bata bhi nahi sakta. ❤️‍🩹 Kaash tum mere paas hoti na, toh main tumhe bahut zor se apne gale laga leta aur kuch der tak tumhe khud se door hi nahi hone deta. 🫂💗 Main tumhari god mein sir rakhkar sona chahta hoon, tumse dher saari pyaari-pyaari baatein karna chahta hoon aur tumhare saath har woh pal jeena chahta hoon jiska sapna maine in chaar saalon mein dekha hai. 🥹💞<br><br>Baby, main tumhare saath kahin door ghoomne jaana chahta hoon, bas tum aur main. 🌍❤️ Main tumhari kamar par haath rakhkar tumhare saath chalna chahta hoon, tumhare saath photos lena chahta hoon, tumhare saath hasna chahta hoon aur har chhoti si khushi ko tumhare saath jeena chahta hoon. 🥰📸💖 Mujhe kisi badi cheez ki zaroorat nahi hai, meri jaan. Bas tum mere paas ho, mera haath tumhare haath mein ho aur tum mere saath muskura rahi ho… mere liye wahi duniya ki sabse badi khushi hogi. 🫶🏻💍<br><br>Pata nahi baby, woh din kab aayega jab main tumhe saamne se dekhunga aur apne dil mein chhupakar rakhi saari feelings tumhe ek hug mein bata dunga. 🥹❤️ Kabhi-kabhi Bhagwan se bhi gussa aata hai ki aakhir hamare hisse mein itna intezaar kyun likha hai. Lekin phir khud ko samjhata hoon ki sabr kar, ek din apni jaan se zaroor milega. 🙏🏻<br><br>I MISS YOU VERY, VERY, VERY MUCH, MERI JAAN! 😭❤️🫂 Kaash tum abhi mere paas hoti, baby…<br><br>I LOVE YOU SO MUCH, MERI JAAN. ❤️🧿 Tumse door zaroor hoon, lekin mera dil hamesha tumhare paas hai. Ek din hum bhi saath honge, baby… aur us din hamari smile sab kuch bayaan kar degi. 🫂💖♾️</p></div></article>
+  </div>
+  <div class="add-row"><button class="btn light" onclick="addMoment()">＋ Add a story moment</button></div>
+</section>
+
+<section class="section page" id="reasons">
+<div class="panel" style="margin:18px auto;max-width:680px;padding:18px;text-align:center;"><div style="font-weight:700;margin-bottom:10px;">🎵 Tu Jaane Na – Atif Aslam</div><audio controls preload="none" style="width:100%;" src="media/embedded-audio-19.mp3"></audio></div>
+
+  <div class="section-head"><div class="kicker">little things that matter</div><h2>Reasons You're Special 💗</h2><p>Tap a card to reveal a little note. You can add your own personal reasons too.</p></div>
+  <div class="panel" style="max-width:900px;margin:0 auto 28px;padding:26px 28px;line-height:1.9;font-size:17px;color:#f8eaf1;text-align:left;white-space:normal;">
+    <p style="margin:0 0 16px;">Meri jaan, ❤️🥹 tumhe pata hai main tumse itna pyaar karta hoon na? Shayad iska jawab mere paas kabhi poori tarah se nahi hoga, kyunki tumse pyaar karne ki wajah sirf ek ya do nahi, balki hazaaron hain. 💗 Tumhari smile mere chehre par khushi le aati hai, tumhari baatein mere din ko special bana deti hain aur tumhara thoda sa attention bhi mere liye bahut maayne rakhta hai. 🫶🏻❤️ Tumhara gussa, tumhari shararatein, tumhara care karna aur tumhara mujhe samjhana—tumhari har chhoti-badi baat mere dil ko bahut achha lagta hai. 🥰🧿</p>
+    <p style="margin:0 0 16px;">Baby, mujhe tumse sirf isliye pyaar nahi hai kyunki tum meri girlfriend ho, balki isliye bhi kyunki tum woh insaan ho jiske saath main apni khushiyan, apne dukh aur sukh sab share karna chahta hoon. 💌🫂</p>
+    <p style="margin:0;font-weight:600;color:#ffd9e8;">Tum meri favourite person ho, meri jaan—sirf aaj nahi, balki har us kal mein bhi jise main tumhare saath jeena chahta hoon. ❤️♾️ I LOVE YOU SO MUCH, MERI BACCHI! 🥹💋🫂💗</p>
+  </div>
+  <div class="reason-grid" id="reasonsGrid">
+    <article class="reason" onclick="revealReason(this,'Baby, tumhari smile meri sabse favourite cheez hai. 🥹❤️ Tum jab bhi smile karti ho na, mera mood apne aap achha ho jaata hai. Mann karta hai bas tumhe dekhta rahun aur tumhari smile hamesha aise hi bani rahe. 🫶🏻💗')"><div class="emoji">🌸</div><h3>Your Beautiful Smile</h3><p>Tap to reveal ♡</p></article>
+    <article class="reason" onclick="revealReason(this,'Meri jaan, tumhara chhoti-chhoti baaton mein mera care karna mujhe bahut achha lagta hai. 🥹💖 Tumhara mujhe samjhana aur meri fikr karna mujhe mehsoos karata hai ki main tumhare liye special hoon. Baby, tumhara ye pyaar mere liye bahut keemti hai. 🧿❤️')"><div class="emoji">🦋</div><h3>The Way You Care</h3><p>Tap to reveal ♡</p></article>
+    <article class="reason" onclick="revealReason(this,'Meri bacchi, tum meri zindagi ka woh hissa ho jiske bina meri khushiyan adhoori si lagti hain. ❤️🥹 Tumse baat karna, tumhare saath apni har chhoti-badi baat share karna aur tumhare saath future ke sapne dekhna mujhe bahut achha lagta hai. Baby, main chahta hoon ki hum hamesha ek-doosre ko aise hi pyaar aur samajhte rahein. 🫂💗♾️')"><div class="emoji">🌷</div><h3>You Make Life Special</h3><p>Tap to reveal ♡</p></article>
+  </div>
+  <div class="add-row"><button class="btn light" onclick="addReason()">＋ Add a reason</button></div>
+</section>
+
+<section class="section page" id="letter">
+  <div class="section-head"><div class="kicker">open when you're ready</div><h2>A Letter For You 💌</h2><p>Some things are easier to write when they come straight from the heart.</p></div>
+  <div class="letter-wrap"><div class="envelope"><div class="big">💌</div><div class="script">A little note, just for you</div><button class="btn" id="openLetter" onclick="document.getElementById('letterPaper').hidden=false;this.hidden=true">Open your letter ♡</button></div>
+    <div class="letter" id="letterPaper" hidden><span id="letterContent">Meri Jaan, Meri Bacchi ❤️🧿
+
+Baby, tum meri zindagi ka woh khoobsurat hissa ho jise main kabhi khona nahi chahta. 🥹❤️ Chahe hum kitni bhi door kyun na hon, tum hamesha mere dil ke sabse kareeb rahogi. Mujhe nahi pata future mein kya likha hai, lekin main itna zaroor jaanta hoon ki main tumhare saath poori zindagi bitaana chahta hoon. 🫂💗
+
+Bas hamesha aise hi meri life mein rehna, apni pyaari si smile ke saath. 🥰🌸 Tumhari khushi mere liye bahut maayne rakhti hai.
+
+</span>
+      <div class="sign" id="letterSign">Forever yours, meri jaan! 🫶🏻💖</div></div>
+  </div>
+  <div class="panel music-box" style="display:flex;flex-direction:column;align-items:center;gap:14px;padding:24px 18px;text-align:center;margin-top:22px">
+    <div style="font-size:36px;line-height:1">🎧💌</div>
+    <h3 style="margin:0;color:#f5d9e9;font-size:21px">A Special Song For You</h3>
+    <p style="margin:0;color:#c8afbc;font-size:13px">Is khat ke saath, tumhare liye ek khaas gaana. ❤️</p>
+    <audio controls preload="metadata" playsinline style="display:block;width:min(100%,520px);max-width:100%">
+      <source src="media/embedded-audio-20.mp3" type="audio/mpeg">
+      Your browser does not support the audio player.
+    </audio>
+  </div>
+</section>
+
+<section class="section page" id="music">
+  <div class="section-head"><div class="kicker">a little space for your favourite song</div><h2>Our Little Soundtrack ♡</h2><p>Ek gaana, jo is pyaari si kahaani ko aur bhi khaas bana de. ❤️</p></div>
+  <div class="panel music-box" style="display:flex;flex-direction:column;align-items:center;gap:16px;padding:28px 20px;text-align:center">
+    <div style="font-size:42px;line-height:1">🎵💗</div>
+    <h3 style="margin:0;color:#f5d9e9;font-size:22px">A Song Just For You</h3>
+    <p style="margin:0;color:#c8afbc;font-size:13px">Press play and enjoy your special song.</p>
+    <audio controls preload="metadata" playsinline style="display:block;width:min(100%,520px);max-width:100%">
+      <source src="media/embedded-audio-21.mp3" type="audio/mpeg">
+      Your browser does not support the audio player.
+    </audio>
+  </div>
+</section>
+
+<section class="section page" id="game">
+<div class="panel" style="margin:18px auto;max-width:680px;padding:18px;text-align:center;"><div style="font-weight:700;margin-bottom:10px;">🎵 Je Tu Thodi Ghabra Ja</div><audio id="page9Song" controls preload="auto" playsinline style="display:block;width:min(100%,520px);max-width:100%;margin:0 auto;" src="media/embedded-audio-22.mp3" type="audio/mpeg" aria-label="Page 9 song: Je Tu Thodi Ghabra Ja"></audio></div>
+
+  <div class="panel quiz love-quiz"><div class="kicker">a tiny birthday game 💗</div><h2 style="font:600 38px 'Playfair Display',serif;color:#804961">Let’s See How Much You Remember, Baby! 💗</h2>
+  <p style="color:#927587">Meri Jaan, Meri Bacchi ❤️🧿<br>Chalo baby, aaj dekhte hain tumhe humari love story kitni yaad hai! 🙈💗 Main tumse kuch cute-cute questions poochhunga, aur tumhe unke answers dene hain. 🥹❤️</p>
+  <p id="loveQuizProgress" style="font-weight:700;color:#b05f82">Question 1 of 8</p><h3 id="loveQuizQuestion" style="color:#804961">Humari pehli mulaqat kahan hui thi? 🥹</h3>
+  <div class="quiz-opts" id="loveQuizOptions"></div><div class="feedback" id="quizFeedback" aria-live="polite"></div>
+  <button class="btn" id="loveQuizNext" style="display:none" onclick="nextLoveQuestion()">Next Question 💗</button>
+  <div id="loveQuizEnd" style="display:none;margin-top:18px"><h3 style="color:#804961">Awww, meri bacchi ne game complete kar liya! 🥹❤️🧿</h3><p>nice baby nice...</p><p>I LOVE YOU SO MUCH, MERI JAAN! 😚💋💗</p><button class="btn light" onclick="restartLoveQuiz()">Play Again 💞</button></div>
+  </div>
+</section>
+
+<section class="section page" id="final">
+  <div class="final final-surprise-card">
+    <div class="hero-emoji">🎁💗🦋</div>
+    <div class="kicker">a little surprise, made only for you</div>
+    <h2 id="finalTitle">Final Surprise,<br>Meri Jaan! ❤️</h2>
+    <div class="panel" style="margin:18px auto;max-width:680px;padding:18px;text-align:center;">
+      <div style="font-weight:700;margin-bottom:10px;">🎵 Sajni — Page 10 Song</div>
+      <audio controls preload="none" playsinline style="display:block;width:min(100%,300px);max-width:100%;height:34px;margin:0 auto;" src="media/embedded-audio-23.mp3"></audio>
+    </div>
+    <p class="final-opening">Meri jaan, tum meri zindagi ka sabse pyaara hissa ho. 🥹❤️ Chahe hum kitni bhi door kyun na hon, tum hamesha mere dil ke sabse kareeb rahogi. Tumhari smile meri favourite hai, aur tumhari khushi mere liye sabse zyada important hai. 🫂💗</p>
+    <div class="promise-box">
+      <div class="promise-heading">A Promise From My Heart 🫶🏻</div>
+      <p>Meri bacchi, main promise karta hoon ki main hamesha tumhari izzat karunga, tumhari baat sununga, tumhe samajhne ki koshish karunga aur tumhari khushi ka khayal rakhunga. Har din perfect ho, zaroori nahi—but main chahta hoon ki hum har mushkil mein ek-doosre ka saath dein. Tumhari smile hamesha yun hi bani rahe, meri jaan. 🧿❤️</p>
+    </div>
+    <div class="final-birthday-wish">Happy Birthday, Meri Jaan! 🎂🎉💖<br><span>Bhagwan tumhari har wish poori kare aur tumhari zindagi ko dher saari khushiyon se bhar de. 🥰🌸</span></div>
+    <div class="hero-actions final-surprise-actions">
+      <button class="btn" onclick="finalSurprise()">Tap Here, Meri Jaan 💝</button>
+      <button class="btn light" onclick="goToPage('home')">Back to the beginning ↑</button>
+    </div>
+    <div id="finalReveal" class="final-reveal" aria-live="polite" style="display:none">
+      <div class="reveal-hearts">💗 💖 💕 💞 💘</div>
+      <h3>Meri Jaan, You Are My Favourite Person! 🥹❤️</h3>
+      <p>Tum meri aaj ki khushi, kal ki umeed aur mere dil ki sabse pyaari dua ho. Main tumhe bahut saara pyaar bhej raha hoon—ek tight hug aur dher saari kisses ke saath! 🫂😚💋</p>
+      <div class="final-signature">Forever Yours,<br>Meri Jaan ka pagal sa ladka 🫶🏻💖</div>
+    </div>
+  </div>
+</section>
+</main>
+<footer><div class="footer-heart">♡</div>made with care, memories & a little bit of magic<br><span>3 November · your special day</span></footer>
+
+<div class="editor" id="editor" onclick="if(event.target===this)closeEditor()">
+ <aside class="drawer">
+  <div class="drawer-head"><h2>Make it yours ✎</h2><button class="close" onclick="closeEditor()">×</button></div>
+  <p class="drawer-note">Yahan apni taraf se jitna chaaho likho. Changes isi browser mein save rahenge. Photos device se select hote hain; page refresh karne par photos dobara select karni hongi. Songs baad mein add honge.</p>
+  <div class="field"><label>Her nickname / greeting</label><input id="editTitle" value="My Pyari Bacchi..."></div>
+  <div class="field"><label>Opening message</label><textarea id="editHero"></textarea></div>
+  <div class="field"><label>Birthday name</label><input id="editName" value="Sundari"></div>
+  <div class="field"><label>Birthday wish</label><textarea id="editWish"></textarea></div>
+  <div class="field"><label>A little reminder</label><textarea id="editReminder"></textarea></div>
+  <div class="field"><label>Countdown note</label><textarea id="editCount"></textarea></div>
+  <div class="field"><label>Letter (write anything you want)</label><textarea id="editLetter" style="min-height:190px"></textarea></div>
+  <div class="field"><label>Letter sign-off</label><input id="editSign"></div>
+  <div class="field"><label>Final birthday message</label><textarea id="editFinal" style="min-height:130px"></textarea></div>
+  <div class="drawer-actions"><button class="btn" onclick="savePersonalisation()">Save changes ♡</button><button class="btn light" onclick="resetPersonalisation()">Reset text</button></div>
+  <div class="drawer-note">Extra ideas: Memory Lane mein photos/captions add karo, Story section mein apni kahani likho, aur Reasons section mein personal reasons add karo. Is tarah website tum dono ki apni story ban jayegi.</div>
+ </aside>
+</div>
+<div class="toast" id="toast">Saved ♡</div>
+
+<script>
+const defaults={
+ title:"My Pyari Bacchi...",
+ hero:"Teri muskaan se har din khil jaata hai,\nTu paas ho ya door, dil ko sukoon de jaata hai. ♡",
+ name:"Sundari",
+ wish:"Wish you many many happy returns of the day, meri pyari bacchi! 🥰😘🎂\n\nMeri jaan, aaj ka din mere liye bahut hi khaas din hai. 🤗 Aisa lagta hai jaise ye din mere liye kisi festival se kam nahi, kyunki aaj hi ke din meri pyari si bacchi, meri jaan, meri Sundari... 😘🥰🤗 ne is duniya mein kadam rakha aur meri duniya 🌍 sanwaar di.\n\nMain bahut lucky person hoon ki Bhagwan ne tumhe mere liye banaya. 🥰😘😙 Iske liye main hamesha Bhagwan ko thank you bolta hoon. 🙇‍♂️\n\nMeri bacchi, main bas yahi chahta hoon ki tum hamesha khush raho. 🥰🤗 Bhagwan tum par hamesha apni kripa banaye rakhe. Meri bacchi ko koi pareshani na ho aur tumhe kisi bhi cheez ki kami na ho. 🥹🫂 Main Bhagwan se bas yahi dua maangta hoon. 🙏\n\nMain apni bacchi ke chehre par kabhi udaasi nahi dekh sakta. 🥹🫂 Main chahta hoon meri jaan hamesha mere saath khush rahe. 🥰\n\nMeri jaan, mujhe tumhara gussa, tumhara pyaar aur tumhari woh daant—sab kuch pasand hai. 😍😘 Jab main koi galat kaam karta hoon aur tum mujhe samjhati ho, daantti ho, toh mujhe woh bhi bahut achha lagta hai. 💗\n\nMeri bacchi, tumhare is birthday par main promise karta hoon ki main tumhe hamesha khush rakhunga aur hamesha tumhare saath rahunga. 🧿❤️ Tum bas aise hi hamesha hansti aur muskurati rehna, kyunki tumhari muskurahat meri duniya ko aur bhi pyaari bana deti hai. 🥰🫂🤗\n\nHappy Birthday, meri bacchi, meri jaan! 🎂😘🥰🤗🌍 Bhagwan tumhari saari wishes poori kare aur tumhe dher saari khushiyan de. 🤞🫂🤗 I love you, very, very, very much, meri jaan! 🥰💋😚",
+ reminder:"Meri sundari, tumhe shayad pata hi nahi hai ki tum meri life mein kitni special ho. 🤗😘 Tumhe khud bhi andaza nahi hoga ki tum mere liye kitni important ho. 😚🥰🫂\n\nMeri jaan, tum kabhi ye mat sochna ki tum akeli ho, meri bacchi. 🥹🫂 Main hamesha tumhare saath khada rahunga, meri jaan. 🫂🥹❤️\n\nMeri bacchi, pata hai meri favourite cheez kya hai? Tumhari smile, baby! 🌍🤗😘 Tum hamesha aise hi hansti-muskurati rehna, meri jaan. 😍😘🥰✨\n\nMeri bacchi... 🥹💗 Main abhi tumhare saath nahi hoon ki tumhari achhe se care kar sakun, isliye tum apna achhe se khayal rakha karo aur khud par dhyan diya karo. 🫶🏻🥹 Tum mere liye bahut precious ho. 🤗🌍😚💖\n\nMeri jaan, kabhi bhi khud ko kam mat samajhna. Tum bahut smart, strong aur ekdum khoobsurat ho. 👑🥰💪🏻🌸\n\nMeri bacchi, jab tum mujhe koi baat batati ho na, toh mann karta hai bas tumhe hi sunta rahun. Tumhari baatein sun kar mera mann hi nahi bharta, meri jaan. 🥹🤗💞😘\n\nHamare beech chahe kitna bhi distance kyun na ho, tum hamesha mere dil ke sabse paas rahogi, meri jaan. 🌍❤️🫂 Meri bacchi, hamesha meri banke rehna. 🥹😘💖🧿",
+ count:"A day that deserves extra flowers, extra cake, and a little extra love.",
+ letter:'Meri Jaan, Meri Bacchi ❤️🧿\n\nBaby, tum meri zindagi ka woh khoobsurat hissa ho jise main kabhi khona nahi chahta. 🥹❤️ Chahe hum kitni bhi door kyun na hon, tum hamesha mere dil ke sabse kareeb rahogi. Mujhe nahi pata future mein kya likha hai, lekin main itna zaroor jaanta hoon ki main tumhare saath poori zindagi bitaana chahta hoon. 🫂💗\n\nBas hamesha aise hi meri life mein rehna, apni pyaari si smile ke saath. 🥰🌸 Tumhari khushi mere liye bahut maayne rakhti hai.',
+ sign:"Forever yours, meri jaan! 🫶🏻💖",
+ final:"Sundari, Meri Bulbul, Kuchupuchu, Bacchi — every nickname has its own little smile attached to it. Happy Birthday! I hope the year ahead is kind to you and gives you countless reasons to smile."
+};
+function setText(id,value){const el=document.getElementById(id);if(el)el.textContent=value}
+function loadPersonalisation(){
+ let d={...defaults};try{d={...d,...JSON.parse(localStorage.getItem('birthdayWords')||'{}')}}catch(e){}
+ setText('heroTitle',d.title);setText('heroText',d.hero);setText('wishName',d.name);setText('wishText',d.wish);setText('reminderText',d.reminder);setText('countText',d.count);setText('letterContent',d.letter);setText('letterSign',d.sign);setText('finalText',d.final);
+ document.getElementById('finalTitle').innerHTML='Stay Wonderful,<br>'+escapeHtml(d.title.replace(/^Hey,\s*/i,'').replace(/[!♡]+$/g,''))+'.';
+ Object.keys({editTitle:1,editHero:1,editName:1,editWish:1,editReminder:1,editCount:1,editLetter:1,editSign:1,editFinal:1}).forEach((id,i)=>{const keys=['title','hero','name','wish','reminder','count','letter','sign','final'];document.getElementById(id).value=d[keys[i]]});
+}
+function escapeHtml(s){return s.replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function openEditor(){document.getElementById('editor').classList.add('open')}
+function closeEditor(){document.getElementById('editor').classList.remove('open')}
+function savePersonalisation(){
+ const val=id=>document.getElementById(id).value;
+ const d={title:val('editTitle'),hero:val('editHero'),name:val('editName'),wish:val('editWish'),reminder:val('editReminder'),count:val('editCount'),letter:val('editLetter'),sign:val('editSign'),final:val('editFinal')};
+ try{localStorage.setItem('birthdayWords',JSON.stringify(d))}catch(e){}
+ loadPersonalisation();closeEditor();showToast('Your words are saved ♡');
+}
+function resetPersonalisation(){if(confirm('Reset all edited text to the original sample text?')){localStorage.removeItem('birthdayWords');loadPersonalisation();showToast('Original text restored')}}
+function showToast(t){const el=document.getElementById('toast');el.textContent=t;el.classList.add('show');setTimeout(()=>el.classList.remove('show'),2200)}
+function loadPhoto(e,input){const f=e.target.files&&e.target.files[0];if(!f)return;const card=input.closest('.photo');let img=card.querySelector('img');if(!img){img=document.createElement('img');card.appendChild(img)}img.src=URL.createObjectURL(f);img.alt='Selected memory';const caption=card.querySelector('.caption');if(caption)caption.style.background='#4e2e40b8';}
+function addPhoto(){const card=document.createElement('div');card.className='photo';card.innerHTML='<div class="placeholder">💗</div><strong>New favourite memory</strong><small>Choose a photo below</small><input type="file" accept="image/*" onchange="loadPhoto(event,this)"><div class="caption" contenteditable="true">Write a caption here ♡</div>';document.getElementById('gallery').appendChild(card)}
+function addMoment(){const n=document.querySelectorAll('.moment').length+1;const card=document.createElement('article');card.className='moment';card.innerHTML='<div class="when" contenteditable="true">Chapter '+String(n).padStart(2,'0')+'</div><div><h3 contenteditable="true">Write your moment title</h3><p contenteditable="true">Write your memory here. Tap this text to edit it.</p></div>';document.getElementById('timeline').appendChild(card)}
+function addReason(){const n=document.querySelectorAll('.reason').length+1;const card=document.createElement('article');card.className='reason';card.innerHTML='<div class="emoji">💗</div><h3 contenteditable="true">Reason No. '+String(n).padStart(2,'0')+'</h3><p contenteditable="true">Write your own reason here ♡</p>';document.getElementById('reasonsGrid').appendChild(card)}
+function revealReason(el,msg){const p=el.querySelector('p');if(p.dataset.revealed==='yes'){p.dataset.revealed='no';p.textContent='Tap to reveal ♡'}else{p.dataset.revealed='yes';p.textContent=msg}}
+function quiz(t){setText('quizFeedback',t)}
+const loveQuizQuestions=[
+ {q:'Humari pehli mulaqat kahan hui thi? 🥹',opts:['School mein 🏫','Tilak ceremony mein 💍','Kisi birthday party mein 🎂'],answer:1,feedback:'Yesss baby! Humari pehli mulaqat tilak ceremony mein hui thi. ❤️'},
+ {q:'Pehli mulaqat mein tumhe meri kaunsi baat sabse pehle yaad hai? 🙈',opts:['Meri smile 😊','Mera tumhe dekhna 👀','Kuch aur 💗'],answer:null,feedback:'Awww baby, tumhara answer mere liye special hai! 🥹❤️'},
+ {q:'Humari pehli mulaqat ke aas-paas tumne mujhe kya diya tha? 🥤',opts:['Chocolate 🍫','Frooti 🥤','Ice cream 🍦'],answer:1,feedback:'Haan meri jaan, Frooti! 🥤❤️'},
+ {q:'Humari baat pehli baar kaise shuru hui thi? 💌',opts:['Maine tumhe message kiya tha 📱','Tumne mujhe message kiya tha 💗','Kisi friend ne baat karwayi thi 🫶🏻'],answer:null,feedback:'Aur phir dheere-dheere humari baatein kitni special ban gayin na, baby? 💗'},
+ {q:'Sabse pehle propose kisne kiya tha? ❤️',opts:['Maine 🥹','Tumne 🙈','Hum dono ne apne dil ki baat batayi thi 💗'],answer:1,feedback:'Yayyy! Humari love story ka ye moment toh special hai! 🥹💋'},
+ {q:'Humare relationship ki sabse special baat kya hai? 🫂',opts:['Humari cute fights 🙈','Door rehkar bhi ek-doosre ko yaad karna 🥹','Ek-doosre ki care karna ❤️'],answer:null,feedback:'Teeno hi special hain, baby—kyunki ye sab humare hain. 🫶🏻❤️'},
+ {q:'Agar main abhi tumhare saamne hota, toh tum sabse pehle kya karti? 💋',opts:['Ek tight hug deti 🫂','Ek pyaari si kiss deti 😚','Mujhse dher saari baatein karti 🥹💗'],answer:null,feedback:'Bas jaldi se tumhare paas aane ka mann karta hai, meri jaan. 🫂💗'},
+ {q:'Baby, tumhare liye main kya hoon? 🧿',opts:['Tumhara best friend 🫶🏻','Tumhara pyaar ❤️','Tumhari poori duniya 🌍💗'],answer:null,feedback:'Aur tum mere liye bahut hi special ho, meri jaan. ❤️🧿'}
+];
+let loveQuizIndex=0;
+function renderLoveQuestion(){const item=loveQuizQuestions[loveQuizIndex];setText('loveQuizProgress','Question '+(loveQuizIndex+1)+' of '+loveQuizQuestions.length);setText('loveQuizQuestion',item.q);setText('quizFeedback','');const box=document.getElementById('loveQuizOptions');box.innerHTML='';item.opts.forEach((opt,i)=>{const b=document.createElement('button');b.textContent=opt;b.onclick=()=>answerLoveQuestion(i);box.appendChild(b)});document.getElementById('loveQuizNext').style.display='none';document.getElementById('loveQuizOptions').style.display='grid';document.getElementById('loveQuizEnd').style.display='none'}
+function answerLoveQuestion(choice){const item=loveQuizQuestions[loveQuizIndex];const buttons=document.querySelectorAll('#loveQuizOptions button');buttons.forEach((b,i)=>{b.disabled=true;if(item.answer!==null&&i===item.answer)b.style.background='#e6f6e9'});setText('quizFeedback',item.answer===null?item.feedback:(choice===item.answer?item.feedback:'Awww koi baat nahi, baby! ❤️ '+item.feedback));document.getElementById('loveQuizNext').style.display='inline-flex';document.getElementById('loveQuizNext').textContent=loveQuizIndex===loveQuizQuestions.length-1?'Finish Game 💗':'Next Question 💗'}
+function nextLoveQuestion(){if(loveQuizIndex<loveQuizQuestions.length-1){loveQuizIndex++;renderLoveQuestion()}else{document.getElementById('loveQuizProgress').style.display='none';document.getElementById('loveQuizQuestion').style.display='none';document.getElementById('loveQuizOptions').style.display='none';document.getElementById('quizFeedback').style.display='none';document.getElementById('loveQuizNext').style.display='none';document.getElementById('loveQuizEnd').style.display='block';burst()}}
+function restartLoveQuiz(){loveQuizIndex=0;document.getElementById('loveQuizProgress').style.display='block';document.getElementById('loveQuizQuestion').style.display='block';document.getElementById('quizFeedback').style.display='block';renderLoveQuestion()}
+renderLoveQuestion();
+function updateCountdown(){const now=new Date();let target=new Date(now.getFullYear(),10,3,0,0,0);if(now>=target)target=new Date(now.getFullYear()+1,10,3,0,0,0);const diff=target-now;const vals=[Math.floor(diff/86400000),Math.floor(diff/3600000)%24,Math.floor(diff/60000)%60,Math.floor(diff/1000)%60];['days','hours','minutes','seconds'].forEach((id,i)=>setText(id,String(vals[i]).padStart(2,'0')));setText('birthdayStatus',(now.getMonth()===10&&now.getDate()===3)?'IT IS YOUR SPECIAL DAY ♡':'THE COUNTDOWN IS ON')}
+setInterval(updateCountdown,1000);updateCountdown();loadPersonalisation();
+window.addEventListener('scroll',()=>{if(!document.body.classList.contains('page-mode')){const max=document.documentElement.scrollHeight-innerHeight;document.getElementById('progressBar').style.width=(max>0?scrollY/max*100:0)+'%'}});
+function burst(){const c=document.getElementById('confetti'),ctx=c.getContext('2d');c.width=innerWidth;c.height=innerHeight;let pieces=Array.from({length:150},()=>({x:Math.random()*c.width,y:-20-Math.random()*c.height*.4,v:2+Math.random()*4,r:3+Math.random()*5,a:Math.random()*6.28}));let frame=0;function draw(){ctx.clearRect(0,0,c.width,c.height);pieces.forEach(p=>{p.y+=p.v;p.x+=Math.sin(p.a+=.04)*1.5;ctx.fillStyle=['#e99ab5','#c46c8c','#f5c9d8','#fff'][Math.floor(Math.random()*4)];ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fill()});if(++frame<145)requestAnimationFrame(draw);else ctx.clearRect(0,0,c.width,c.height)}draw()}
+function finalSurprise(){
+ const reveal=document.getElementById('finalReveal');
+ if(reveal) reveal.style.display='block';
+ burst();
+ const symbols=['💗','💖','💕','💞','🌸','🌷','✨','💝'];
+ for(let i=0;i<44;i++){
+  const el=document.createElement('span');el.className='floating-love';el.textContent=symbols[Math.floor(Math.random()*symbols.length)];
+  el.style.setProperty('--x',Math.random()*100+'vw');el.style.setProperty('--size',(18+Math.random()*24)+'px');el.style.setProperty('--duration',(3.2+Math.random()*3.2)+'s');
+  document.body.appendChild(el);setTimeout(()=>el.remove(),6800);
+ }
+ if(reveal) reveal.scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+window.addEventListener('resize',()=>{const c=document.getElementById('confetti');c.width=innerWidth;c.height=innerHeight});
+
+// Page-by-page navigation: click Next to reveal the next chapter.
+const pageIds=['home','birthday','wish','memories','story','reasons','letter','music','game','final'];
+const pageNames=['Welcome','Countdown','Birthday Wish','Memories','Our Story','Reasons','Letter','Music','Little Game','Final Surprise'];
+let currentPage=0;
+let hasNavigated=false;
+let isTransitioning=false;
+
+// A single original golden-petal sound is embedded in this HTML.
+// This avoids missing-file/path problems when the site is opened from a ZIP.
+let pageSoundEnabled=true;
+const goldenPetalSound = new Audio('media/embedded-audio-24.mp3');
+goldenPetalSound.preload='auto';
+goldenPetalSound.volume=0.88;
+
+function playPetalSound(){
+  if(!pageSoundEnabled) return;
+  try {
+    goldenPetalSound.pause();
+    goldenPetalSound.currentTime=0;
+    const playback=goldenPetalSound.play();
+    if(playback && typeof playback.catch==='function'){
+      playback.catch(()=>{
+        const button=document.getElementById('soundToggle');
+        if(button) button.textContent='✿ Tap to enable flower sound';
+      });
+    }
+  } catch(error) {
+    const button=document.getElementById('soundToggle');
+    if(button) button.textContent='✿ Tap to enable flower sound';
+  }
+}
+
+function togglePageSound(){
+  pageSoundEnabled=!pageSoundEnabled;
+  const button=document.getElementById('soundToggle');
+  if(button){
+    button.textContent=pageSoundEnabled?'✿ Flower sound: ON':'✿ Flower sound: OFF';
+    button.setAttribute('aria-pressed',String(pageSoundEnabled));
+  }
+  if(pageSoundEnabled) playPetalSound();
+}
+
+
+const surpriseLines=[
+  ['A little surprise...', 'A new little chapter is waiting ♡', '🎀', '✦ ♡ ✦', 'fx-home'],
+  ['A date worth celebrating...', 'Flip the calendar — your special day is getting closer! 📅', '🗓️', '✧ · ✧ · ✧', 'fx-birthday'],
+  ['A wish just for you...', 'Let this little flower bloom with birthday wishes 🌷', '🌷', '❀ ✿ ❀', 'fx-wish'],
+  ['A memory is waiting...', 'A tiny snapshot from our collection is coming into view 📸', '📸', '▧ ♡ ▧', 'fx-memories'],
+  ['Turn the page...', 'Our story is made of little chapters like this 📖', '📖', '⋆｡°✩', 'fx-story'],
+  ['A little reminder...', 'Sending a heartbeat-sized reminder of how special you are 💗', '💗', '♡ ♥ ♡', 'fx-reasons'],
+  ['A note from my heart...', 'This little letter has been waiting just for you 💌', '💌', '✉ ♡ ✉', 'fx-letter'],
+  ['Feel the music...', 'Let the melody float in and make this moment sweeter 🎵', '🎵', '♪ ♫ ♪', 'fx-music'],
+  ['Ready, set, play!', 'A playful little challenge is just around the corner 🎮', '🎮', '✦ ★ ✦', 'fx-game'],
+  ['The grand finale...', 'A little burst of birthday magic, saved just for you 🎉', '🎆', '✧ ✨ ✧', 'fx-final']
+];
+
+// Each chapter has its own soundtrack. Stop every other track whenever a page changes.
+let activePageSong = null;
+let pageSongNeedsGesture = false;
+function playPageSong(idx){
+  const page = document.getElementById(pageIds[idx]);
+  const target = page ? page.querySelector('audio') : null;
+  document.querySelectorAll('.page audio').forEach(audio=>{
+    if(audio !== target){
+      audio.pause();
+      try{ audio.currentTime = 0; }catch(e){}
+    }
+  });
+  if(!target){ activePageSong=null; return; }
+  if(activePageSong !== target){
+    target.pause();
+    try{ target.currentTime = 0; }catch(e){}
+  }
+  activePageSong=target;
+  const attempt=target.play();
+  if(attempt && typeof attempt.then==='function'){
+    attempt.then(()=>{pageSongNeedsGesture=false;})
+      .catch(()=>{pageSongNeedsGesture=true;});
+  }else{
+    pageSongNeedsGesture=target.paused;
+  }
+}
+// Browsers may block sound on a fresh visit until the visitor interacts.
+// Retry once on the first genuine interaction, while still allowing manual controls.
+document.addEventListener('pointerdown',()=>{
+  if(pageSongNeedsGesture && activePageSong){
+    const attempt=activePageSong.play();
+    if(attempt && typeof attempt.then==='function'){
+      attempt.then(()=>{pageSongNeedsGesture=false;}).catch(()=>{});
+    }
+  }
+},{passive:true});
+document.addEventListener('keydown',()=>{
+  if(pageSongNeedsGesture && activePageSong){
+    const attempt=activePageSong.play();
+    if(attempt && typeof attempt.then==='function'){
+      attempt.then(()=>{pageSongNeedsGesture=false;}).catch(()=>{});
+    }
+  }
+});
+
+function renderPage(idx){
+  currentPage=idx;
+  playPageSong(idx);
+  pageIds.forEach((id,i)=>{const el=document.getElementById(id);if(el)el.classList.toggle('active',i===idx)});
+  const footer=document.querySelector('footer');if(footer)footer.classList.toggle('show-footer',idx===pageIds.length-1);
+  const bar=document.getElementById('progressBar');if(bar)bar.style.width=(idx/(pageIds.length-1)*100)+'%';
+  document.querySelectorAll('.page-nav').forEach(el=>el.remove());
+  const page=document.getElementById(pageIds[idx]);
+  const nav=document.createElement('div');nav.className='page-nav';
+  const back=document.createElement('button');back.className='btn light';back.textContent=idx===0?'Start here ♡':'← Previous';back.disabled=idx===0;back.style.opacity=idx===0?'.45':'1';back.onclick=()=>goToPage(Math.max(0,currentPage-1));
+  const count=document.createElement('span');count.className='page-count';count.textContent=(idx+1)+' / '+pageIds.length+' · '+pageNames[idx].toUpperCase();
+  const next=document.createElement('button');next.className='btn';next.textContent=idx===pageIds.length-1?'Replay from start ↺':'Next page →';next.onclick=()=>requestPageAdvance(idx===pageIds.length-1?0:currentPage+1);
+  nav.append(back,count,next);page.appendChild(nav);
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+let petalTargetPage=null,activeGame=null,gameState={},gameClock=null;
+const unlockGames=[
+ {title:'Tap the twinkling stars',hint:'Tap 3 stars as they pop up in different places.',name:'Star Tap'},
+ {title:'Pick the birthday wish',hint:'Choose the one thing that makes every birthday sweeter.',name:'Quick Choice'},
+ {title:'Match the little memories',hint:'Find both matching pairs. Tap two cards at a time.',name:'Memory Match'},
+ {title:'Unscramble the sweet word',hint:'Which option correctly spells the mixed-up letters: RTAEH?',name:'Word Scramble'},
+ {title:'Wait for the golden glow',hint:'Wait until the flower turns gold, then tap it. Don’t tap early!',name:'Reaction Test'},
+ {title:'Repeat the sparkle sequence',hint:'Watch the symbols, then tap them back in the same order.',name:'Sequence Memory'},
+ {title:'Find the odd one out',hint:'Three symbols match. Tap the one that is different.',name:'Odd One Out'},
+ {title:'Choose the missing note',hint:'The notes go 1, 2, 3, __. Which note comes next?',name:'Music Puzzle'},
+ {title:'Final number pattern',hint:'A little harder! Find the next number: 2, 6, 12, 20, __',name:'Final Puzzle'}
+];
+function requestPageAdvance(idx){
+ if(idx<=currentPage){goToPage(idx);return;}
+ if(idx<0||idx>=pageIds.length||isTransitioning)return;
+ petalTargetPage=idx;activeGame=idx-1;gameState={};
+ const game=unlockGames[activeGame]||unlockGames[0];
+ document.getElementById('petalGameTitle').textContent=game.title;
+ document.getElementById('petalGameHint').textContent=game.hint;
+ document.getElementById('petalScore').textContent='Game '+(activeGame+1)+' of 9 · '+game.name;
+ document.getElementById('petalTimer').textContent=activeGame===8?'Final level':'Ready?';
+ document.getElementById('petalGameMessage').textContent='Press Start when you are ready ♡';
+ document.getElementById('petalPlayfield').innerHTML='<span style="color:#f5c8dc">Your mini-game will appear here ✨</span>';
+ const start=document.getElementById('petalStartBtn');start.style.display='inline-block';start.textContent='Start game ♡';
+ document.getElementById('petalGameOverlay').classList.add('open');
+}
+function gameMessage(msg){document.getElementById('petalGameMessage').textContent=msg;}
+function gameWin(){
+ if(gameClock){clearTimeout(gameClock);clearInterval(gameClock);gameClock=null;}
+ gameMessage('You did it! Next chapter unlocked ✨');
+ const next=petalTargetPage;petalTargetPage=null;
+ setTimeout(()=>{document.getElementById('petalGameOverlay').classList.remove('open');if(next!==null)goToPage(next);},450);
+}
+function gameFail(msg){gameMessage(msg||'Not quite! Try again ♡');const b=document.getElementById('petalStartBtn');b.style.display='inline-block';b.textContent='Try again ↻';if(gameClock){clearTimeout(gameClock);clearInterval(gameClock);gameClock=null;}}
+function startUnlockGame(){
+ if(gameClock){clearTimeout(gameClock);clearInterval(gameClock);gameClock=null;}
+ const field=document.getElementById('petalPlayfield');field.innerHTML='';
+ document.getElementById('petalStartBtn').style.display='none';
+ document.getElementById('petalTimer').textContent='Have fun!';
+ gameState={};
+ switch(activeGame){
+  case 0: startStarTap(field);break;
+  case 1: field.innerHTML='<button class="mini-choice" data-answer="no">Homework 📚</button><button class="mini-choice" data-answer="yes">Cake 🎂</button><button class="mini-choice" data-answer="no">Laundry 🧺</button>';field.querySelectorAll('button').forEach(b=>b.onclick=()=>b.dataset.answer==='yes'?gameWin():gameMessage('Nice try! Think birthday treats 🎂'));break;
+  case 2: startMemory(field);break;
+  case 3: field.innerHTML='<button class="mini-choice" data-answer="no">EARTH</button><button class="mini-choice" data-answer="yes">HEART</button><button class="mini-choice" data-answer="no">HATER</button><button class="mini-choice" data-answer="no">TEARS</button>';field.querySelectorAll('button').forEach(b=>b.onclick=()=>b.dataset.answer==='yes'?gameWin():gameMessage('Try another spelling ♡'));break;
+  case 4: startReaction(field);break;
+  case 5: startSequence(field);break;
+  case 6: field.innerHTML='<button class="mini-choice">🌸</button><button class="mini-choice">🌸</button><button class="mini-choice">🌙</button><button class="mini-choice">🌸</button>';field.querySelectorAll('button').forEach(b=>b.onclick=()=>b.textContent==='🌙'?gameWin():gameMessage('Look closely—one symbol is different!'));break;
+  case 7: field.innerHTML='<button class="mini-choice" data-note="2">🎵 2</button><button class="mini-choice" data-note="4">🎵 4</button><button class="mini-choice" data-note="3">🎵 3</button><button class="mini-choice" data-note="1">🎵 1</button>';field.querySelectorAll('button').forEach(b=>b.onclick=()=>b.dataset.note==='4'?gameWin():gameMessage('Count forward: 1, 2, 3...'));break;
+  case 8: field.innerHTML='<div style="width:100%;font-size:24px;font-weight:700;color:#ffe0ec">2&nbsp; · &nbsp;6&nbsp; · &nbsp;12&nbsp; · &nbsp;20&nbsp; · &nbsp;?</div><button class="mini-choice" data-answer="no">28</button><button class="mini-choice" data-answer="yes">30</button><button class="mini-choice" data-answer="no">32</button>';field.querySelectorAll('button').forEach(b=>b.onclick=()=>b.dataset.answer==='yes'?gameWin():gameMessage('Look at the gaps: +4, +6, +8...'));break;
+ }
+}
+function startStarTap(field){gameState.hits=0;field.innerHTML='<button class="petal-target" aria-label="Tap star">⭐</button>';const target=field.querySelector('button');const place=()=>{target.style.left=(8+Math.random()*72)+'%';target.style.top=(8+Math.random()*65)+'%';target.style.transform='translate(-50%,-50%)'};place();target.onclick=()=>{gameState.hits++;document.getElementById('petalScore').textContent='Stars: '+gameState.hits+' / 3';if(gameState.hits>=3)gameWin();else{place();gameMessage('One more star! ✨')}};gameMessage('Tap all 3 stars!');}
+function startMemory(field){const cards=['🌷','🎀','🌷','🎀'].sort(()=>Math.random()-.5);gameState.first=null;gameState.matches=0;gameState.lock=false;field.innerHTML=cards.map((v,i)=>`<button class="memory-card" data-value="${v}" aria-label="Memory card ${i+1}">?</button>`).join('');field.querySelectorAll('button').forEach(btn=>btn.onclick=()=>{if(gameState.lock||btn.disabled||btn.textContent!=='?')return;btn.textContent=btn.dataset.value;if(!gameState.first){gameState.first=btn;return;}if(gameState.first.dataset.value===btn.dataset.value){btn.disabled=true;gameState.first.disabled=true;gameState.first=null;gameState.matches++;if(gameState.matches===2)gameWin();else gameMessage('A match! Find the other pair.');}else{gameState.lock=true;const first=gameState.first;setTimeout(()=>{first.textContent='?';btn.textContent='?';gameState.first=null;gameState.lock=false;},650);}});gameMessage('Find the two matching pairs!');}
+function startReaction(field){field.innerHTML='<button class="petal-target" style="position:static;transform:none;width:110px;height:110px" id="reactionFlower">🌸</button>';const flower=field.querySelector('button');gameState.ready=false;gameState.early=false;gameMessage('Wait for the flower to turn gold...');const delay=1400+Math.random()*1800;gameClock=setTimeout(()=>{gameState.ready=true;flower.textContent='🌟';flower.style.background='#b88a32';flower.onclick=()=>gameWin();gameMessage('NOW! Tap the golden flower!');},delay);flower.onclick=()=>{if(!gameState.ready){gameState.early=true;if(gameClock)clearTimeout(gameClock);gameClock=null;gameFail('Too early! Wait for the golden glow.');}};}
+function startSequence(field){const seq=['🌸','⭐','💗'];gameState.seq=seq;gameState.input=[];field.innerHTML='<div id="sequenceDisplay" style="width:100%;font-size:35px;color:#ffe0ec">Get ready...</div><div style="width:100%;display:flex;justify-content:center;gap:8px"><button class="sequence-key">🌸</button><button class="sequence-key">⭐</button><button class="sequence-key">💗</button></div>';const display=field.querySelector('#sequenceDisplay');let i=0;const show=()=>{if(i<seq.length){display.textContent=seq[i];i++;gameClock=setTimeout(show,650);}else{display.textContent='Your turn! Repeat the order';field.querySelectorAll('.sequence-key').forEach(b=>b.onclick=()=>{const expected=seq[gameState.input.length];if(b.textContent!==expected){gameState.input=[];gameMessage('Sequence reset—watch and try again ♡');display.textContent='🌸  ⭐  💗';return;}gameState.input.push(b.textContent);if(gameState.input.length===seq.length)gameWin();else gameMessage('Correct! Keep going.');});}};show();}
+function cancelPetalGame(){if(gameClock){clearTimeout(gameClock);clearInterval(gameClock);gameClock=null;}petalTargetPage=null;document.getElementById('petalGameOverlay').classList.remove('open');}
+
+function goToPage(target){
+  const idx=typeof target==='number'?target:pageIds.indexOf(target);
+  if(idx<0||idx>=pageIds.length||isTransitioning)return;
+  if(!hasNavigated||idx===currentPage){renderPage(idx);hasNavigated=true;return;}
+  isTransitioning=true;
+  playPetalSound();
+  const overlay=document.getElementById('surpriseOverlay');
+  const line=surpriseLines[idx]||surpriseLines[0];
+  overlay.className='surprise-overlay '+(line[4]||'fx-home');
+  document.querySelector('.surprise-gift').textContent=line[2];
+  document.querySelector('.surprise-sparkle').textContent=line[3];
+  document.getElementById('surpriseTitle').textContent=line[0];
+  document.getElementById('surpriseCaption').textContent=line[1];
+  overlay.setAttribute('aria-hidden','false');
+  // Restart the destination-specific animation on every visit.
+  void overlay.offsetWidth;
+  overlay.classList.add('show');
+  // Give each new chapter a short gift-opening moment before revealing it.
+  setTimeout(()=>{
+    renderPage(idx);
+    burst();
+    setTimeout(()=>{
+      overlay.classList.remove('show');
+      overlay.setAttribute('aria-hidden','true');
+      setTimeout(()=>{isTransitioning=false;},380);
+    },520);
+  },760);
+}
+
+document.body.classList.add('page-mode');
+document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',e=>{const id=a.getAttribute('href').slice(1);if(pageIds.includes(id)){e.preventDefault();requestPageAdvance(pageIds.indexOf(id))}}));
+renderPage(0);
+hasNavigated=true; // First Next click is a real user gesture and should play the sound.
+
+</script>
+</body>
+</html>
